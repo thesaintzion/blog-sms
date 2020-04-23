@@ -1,0 +1,154 @@
+:host ::ng-deep {
+    $main-gray: #ccd6dd;
+    $main-blue: #1da1f2;
+    $main-black: #000000;
+    .main-color-blue {
+        color: $main-blue !important;
+    }
+    .sidenav-container {
+        height: 100%;
+        background-color: #ffffff;
+        // background-color: #f5f8fa;
+    }
+    .sidenav-container.blur {
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+    }
+    .user-pic {
+        background-position: center;
+        background-size: contain;
+    }
+    .sidenav {
+        width: 230px;
+        // background-color: transparent !important;
+        // background-color: #f5f8fa;
+        // padding: 10px 0px 20px 20px;
+        // background-image: linear-gradient(160deg, rgba(79, 172, 254, 0.9) 0%, #00f2fe 100%);
+        // background-image: linear-gradient(160deg, #00f2fe 0%, rgba(79, 172, 254, 0.9) 100%);
+        // background-image: linear-gradient(160deg, #ffc107 0%, rgb(255, 251, 0) 100%);
+        border: 0;
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+        min-height: 100vh;
+        .sidenav-rounded {
+            // border-radius: 9px !important;
+            // background-image: linear-gradient(160deg, rgba(79, 172, 254, 0.9) 0%, #00f2fe 100%);
+            height: 100%;
+            overflow: hidden;
+            // background-color: #f5f8fa;
+            background-color: #ffffff;
+            // background-image: linear-gradient(160deg, #00f2fe 0%, rgba(79, 172, 254, 0.9) 100%);
+            // min-height: 100%;
+            // border: 1px solid #eee;
+            img {
+                // margin-top: 10px;
+            }
+        }
+        .mat-toolbar {
+            background: transparent;
+            height: 54px !important;
+        }
+        .mat-nav-list {
+            .mat-list-item {
+                font-size: 14px;
+                span.mat-line {
+                    font-weight: 600 !important;
+                }
+                &:hover {
+                    border-color: transparent !important;
+                    background-color: #eaf7ff;
+                    color: #09a1ff !important;
+                    .mat-icon {
+                        color: #09a1ff !important;
+                        // box-shadow: 0 4px 17px rgba(black, 0.35);
+                    }
+                }
+            }
+            .mat-icon {
+                color: #ccd6dd !important;
+                font-weight: normal !important;
+            }
+            .mat-expansion-panel {
+                background: transparent !important;
+                color: inherit !important;
+                box-shadow: none !important;
+            }
+            .mat-expansion-panel-header {
+                padding: 0 !important;
+            }
+            .mat-expansion-panel-header.panel-padding {
+                padding: 0 24px 0 0 !important;
+            }
+            .mat-expansion-panel-body {
+                padding: 0 !important;
+                // border: 1px solid #eee;
+                // background-color: #f5f8fa;
+            }
+        }
+    }
+    .sidenav.bg {
+        // background-image: url('../../../../assets//img/user.png');
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
+    .mat-sidenav-content {
+        .mat-toolbar {
+            // border-radius: 60px;
+            // margin-top: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #ffffff !important;
+            // background-color: #f5f8fa;
+            height: 54px !important;
+        }
+        .footer {
+            position: sticky;
+            bottom: 0;
+            z-index: 1;
+            width: 100%;
+            overflow: hidden;
+            .mat-toolbar {
+                background-color: #ffffff !important;
+            }
+            .mat-icon {
+                height: 30px;
+                width: 30px;
+                font-size: 30px;
+            }
+        }
+    }
+    .user-pic-con.mat-list-icon {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    // 
+    .search-form {
+        .form-control {
+            border-radius: 60px;
+        }
+    }
+    .mat-list-base .mat-list-item .mat-line {
+        text-overflow: ellipsis !important;
+        span:last-of-type {
+            overflow: hidden;
+            text-overflow: ellipsis !important;
+        }
+    }
+    @media (max-width:767px) {}
+    @media (max-width: 991.93px) {
+        .hide-mobile {
+            display: none !important;
+        }
+        .outlet-con.container {
+            padding: 0 !important;
+        }
+        .mat-sidenav-content {
+            .mat-toolbar {
+                .container {
+                    padding: 0 !important;
+                }
+            }
+        }
+    }
+}

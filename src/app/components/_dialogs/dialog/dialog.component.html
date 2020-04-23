@@ -1,0 +1,89 @@
+<div class=" gallery-container Bootstrap ">
+
+
+    <div *ngIf="prevImgPath" class="preview-con pb-5">
+        <div class="preview-overlay" style="box-shadow: 0 !important;">
+            <button class="float-right" mat-icon-button mat-raised-button (click)="prevImgPath = nall">
+                    <mat-icon>close</mat-icon>
+                </button>
+        </div>
+        <img width="100%" [src]="prevImgPath" [alt]="prevImgPath">
+    </div>
+
+    <div *ngIf="!prevImgPath" class="container">
+        <div class="d-flex justify-content-between align-items-center align-content w-100 mb-3">
+            <h4>Fake image upload</h4>
+            <div *ngIf="!imgUrl">
+                <div>
+                    <button class="upload-btn" tabindex="-1" mat-raised-button (click)="uploadImg()"><mat-icon>image</mat-icon> Upload Image</button>
+                </div>
+                <div>
+                    <input id="fileInputField" accept="image/*" type="file" class="custom-file-input d-none">
+                </div>
+            </div>
+
+            <div>
+                <button mat-raised-button mat-icon-button tabindex="-1" (click)="onBtnClick()"><mat-icon>close</mat-icon></button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row no-gutters">
+                <div *ngIf="imgUrl" class="col-md-6 mx-auto mt-2 upload-con">
+                    <div class="upload-overlay">
+                        <div class="text-center pt-3">
+                            <div class="lds-roller">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button mat-icon-button mat-raised-button (click)="imgUrl = nall">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </div>
+
+                    </div>
+                    <img width="100%" [src]="imgUrl" alt="Image">
+                    <!-- <img width="100%" src="../../../../assets/img/b2.jpg" alt="Image"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tz-gallery animated fadeInUp" *ngIf="!imgUrl && !prevImgPath">
+        <div class="container">
+            <div *ngIf="galleries.length < 1 else showGallerires" class="text-center">
+                <p class="mt-5">No Item to display.</p>
+            </div>
+            <ng-template #showGallerires>
+                <div class="row">
+                    <ng-container *ngFor="let gallery of galleries">
+                        <div class="col-sm-4 col-md-3 gallery-con">
+                            <div class=" gallry-overlay text-center">
+                                <div class="mt-2">
+                                    <button (click)="onBtnClick(gallery.path)" mat-raised-button tabindex="-1">Select</button>
+                                </div>
+                                <div class="mt-2">
+                                    <button (click)="viewImg(gallery.path)" mat-raised-button tabindex="-1">Preview</button>
+                                </div>
+
+                                <p class=" mt-3 ">{{gallery.createdAt | date}}</p>
+                            </div>
+                            <div class="lightbox ">
+                                <img [src]="gallery.path " [alt]="gallery.path">
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+</div>

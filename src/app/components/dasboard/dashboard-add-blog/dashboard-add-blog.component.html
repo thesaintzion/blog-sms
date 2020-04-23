@@ -1,0 +1,190 @@
+<form [formGroup]="blogForm" (ngSubmit)="blogFormSubmit()" class="mt-3 container">
+    <div class="col-m main-con">
+        <div class="row">
+            <div class="col-md-12  mb-4">
+                <button mat-raised-button (click)="uploadFeaturedImg()"><mat-icon>image</mat-icon> Add featured image</button>
+
+                <img class="w-100" [src]="imgUrl">
+            </div>
+
+            <div class="col-md-12">
+                <div>
+                    <mat-form-field class="w-100">
+                        <input formControlName="title" matInput autocomplete="false" placeholder="Title" required>
+                        <!-- <mat-hint class="text-danger">Password is required</mat-hint> -->
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100">
+                        <input formControlName="subTitle" matInput autocomplete="false" placeholder="Subtitle" required>
+                        <!-- <mat-hint class="text-danger">Password is required</mat-hint> -->
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100">
+                        <input formControlName="tags" matInput autocomplete="false" placeholder="Tags (comma seperated)" required>
+                        <!-- <mat-hint class="text-danger">Password is required</mat-hint> -->
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="mb-0 mt-4 mb-2 text-muted">Body *</p>
+        <div class="main-quill">
+            <!-- [modules]="quillConfig" -->
+
+            <quill-editor #quillBar theme="snow" (onEditorCreated)="onEditorCreated($event)" (onContentChanged)="onContentChanged($event)" formControlName="body" placeholder="Type description">
+                <div quill-editor-toolbar>
+
+                    <span class="ql-formats">
+                        <select class="ql-font"></select>
+                        <select class="ql-size"></select>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-bold"></button>
+                        <button class="ql-italic"></button>
+                        <button class="ql-underline"></button>
+                        <button class="ql-strike"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <select class="ql-color"></select>
+                        <select class="ql-background"></select>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-script" value="sub"></button>
+                        <button class="ql-script" value="super"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-header" value="1"></button>
+                        <button class="ql-header" value="2"></button>
+                        <button class="ql-blockquote"></button>
+                        <button class="ql-code-block"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-list" value="ordered"></button>
+                        <button class="ql-list" value="bullet"></button>
+                        <button class="ql-indent" value="-1"></button>
+                        <button class="ql-indent" value="+1"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-direction" value="rtl"></button>
+                        <select class="ql-align"></select>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-link"></button>
+                        <button (click)="openConfirmDialog()">
+                            <svg viewBox="0 0 18 18"> <rect class="ql-stroke" height="10" width="12" x="3" y="4"></rect> 
+                                <circle class="ql-fill" cx="6" cy="7" r="1"></circle> 
+                                <polyline class="ql-even ql-fill" points="5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12"></polyline> </svg>
+                        </button>
+                        <button class="ql-video"></button>
+                        <button class="ql-formula"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-clean"></button>
+                        </span>
+
+                </div>
+            </quill-editor>
+            <!-- <button mat-raised-button (click)="showBar(quillBar)">Img</button> -->
+        </div>
+
+        <img>
+
+        <div>
+            <!-- <hr>
+            <quill-editor>
+                <div quill-editor-toolbar>
+
+                    <span class="ql-formats">
+                        <select class="ql-font"></select>
+                        <select class="ql-size"></select>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-bold"></button>
+                        <button class="ql-italic"></button>
+                        <button class="ql-underline"></button>
+                        <button class="ql-strike"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <select class="ql-color"></select>
+                        <select class="ql-background"></select>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-script" value="sub"></button>
+                        <button class="ql-script" value="super"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-header" value="1"></button>
+                        <button class="ql-header" value="2"></button>
+                        <button class="ql-blockquote"></button>
+                        <button class="ql-code-block"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-list" value="ordered"></button>
+                        <button class="ql-list" value="bullet"></button>
+                        <button class="ql-indent" value="-1"></button>
+                        <button class="ql-indent" value="+1"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-direction" value="rtl"></button>
+                        <select class="ql-align"></select>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-link"></button>
+                        <button (click)="onClick()" class="ql-imag">
+                            <mat-icon>person</mat-icon>
+                        </button>
+                        <button class="ql-video"></button>
+                        <button class="ql-formula"></button>
+                        </span>
+                    <span class="ql-formats">
+                        <button class="ql-clean"></button>
+                        </span>
+
+                </div>
+            </quill-editor> -->
+            <!-- <button (click)="openConfirmDialog()" mat-raised-button>Click me</button> -->
+            <!-- {{formVal | json}} -->
+
+            <!-- <quill-view [content]="content" format="text" theme="snow">
+
+            </quill-view> -->
+
+        </div>
+    </div>
+
+
+
+    <div class="col-md- sidebar">
+        <div class=" sidebar-inner-con">
+            <section class="d-flex justify-content-between w-100">
+                <p>Visibility</p>
+                <mat-slide-toggle color="primary" checked>
+                </mat-slide-toggle>
+            </section>
+            <section class="d-flex justify-content-between w-100">
+                <p>Comments</p>
+                <mat-slide-toggle color="primary" checked>
+
+                </mat-slide-toggle>
+            </section>
+            <section class="d-flex justify-content-between w-100">
+                <p>Share</p>
+                <mat-slide-toggle checked color="primary">
+                </mat-slide-toggle>
+            </section>
+            <section class="d-flex justify-content-between w-100">
+                <p>Protected</p>
+                <mat-slide-toggle color="primary" disabled>
+
+                </mat-slide-toggle>
+            </section>
+            <section class="save-btn text-center mb-4">
+                <button mat-button class=" main-btn-blue">Save changes</button>
+            </section>
+
+        </div>
+    </div>
+</form>
+
+<!-- </div> -->

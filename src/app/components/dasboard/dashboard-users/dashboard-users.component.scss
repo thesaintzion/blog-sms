@@ -1,0 +1,32 @@
+.table {
+    .account-no {
+        &:hover {
+            cursor: pointer;
+            background-color: gray;
+            color: #ffffff;
+        }
+    }
+    thead th {
+        border: 0 !important;
+        // font-weight: normal !important;
+        // color: #ccd6dd !important;
+        font-size: 14px;
+    }
+    tbody {
+        border-radius: 8px !important;
+    }
+    tr {
+        // border-bottom: 5px solid #eaebf0;
+        // border-top: 5px solid #eaebf0;
+    }
+    td {
+        padding: .10rem !important;
+        padding-left: 10px !important;
+        vertical-align: middle !important;
+    }
+    .flesh-tr {
+        tr:first-child {
+            background: rgb(255, 255, 162);
+        }
+    }
+}

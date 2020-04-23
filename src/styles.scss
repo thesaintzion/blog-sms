@@ -1,1 +1,231 @@
 /* You can add global styles to this file, and also import other style files */
+
+$main-gray: #F5F5F5;
+$main-blue: #1da1f2;
+$main-black: #000000;
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+p,
+strong,
+a,
+span,
+li,
+input,
+button,
+textarea,
+table td {
+    font-weight: normal !important;
+    font-size: 14px;
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+.sidenav .mat-nav-list .active {
+    // color: #09a1ff !important;
+    .mat-list-item-content .mat-icon {
+        color: #09a1ff !important;
+        // font-weight: bolder !important;
+    }
+}
+
+.icon-gray {
+    color: #ccd6dd !important;
+}
+
+.main-gb-hover {
+    &:hover {
+        border-color: transparent !important;
+        background-color: #eaf7ff;
+        color: #09a1ff !important;
+    }
+}
+
+.text-bolder {
+    font-weight: bolder !important;
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+// Custom
+.main-color-blue {
+    color: $main-blue !important;
+}
+
+.main-bg-blue {
+    background-color: $main-blue !important;
+}
+
+.border-color {
+    border: 1px solid #eee !important;
+    color: #1da1f2 !important;
+    &:hover {
+        border-color: transparent !important;
+        background-color: #eaf7ff;
+        color: #09a1ff !important;
+    }
+}
+
+.main-btn-blue {
+    border-radius: 90px !important;
+    background-color: $main-blue;
+    color: #ffffff;
+}
+
+.main-btn-blue-outline {
+    border-radius: 90px;
+    background-color: transparent !important;
+    color: $main-blue !important;
+}
+
+.main-gray-bg {
+    background-color: #f5f8fa !important;
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: none !important;
+    outline: 0 !important;
+    outline: 0px auto #08E6C2 !important;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #a4dcff;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem #09a1ff;
+}
+
+.mat-list-base {
+    padding-top: 0 !important;
+}
+
+@media (min-width:768px) {
+     ::-webkit-scrollbar,
+     ::-webkit-scrollbar-thumb {
+        width: 8px;
+        border-radius: 10px;
+        background-clip: padding-box;
+        height: 7px;
+    }
+     ::-webkit-scrollbar-thumb {
+        background: gray;
+    }
+}
+
+// 
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #09a1ff;
+    margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

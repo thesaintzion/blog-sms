@@ -1,0 +1,139 @@
+<mat-sidenav-container class="sidenav-container" [ngClass]="{'blur': blur}">
+
+    <!-- <mat-sidenav [ngClass]="{'bg': bgLoading}" #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false"> -->
+
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <div class="sidenav-rounded">
+            <mat-toolbar class="animated border-bottom ">
+                <div class="d-flex justify-content-between w-100">
+                    <div class="user d-flex align-items-center align-content-center ">
+                        <img style="width:38px" src="../../../../assets/img/cropped-AggitalFavicon-180x180.jpg">
+                        <!-- <strong class="ml-3 main text-bolder">Khozana<strong class="main-green-color">Blog</strong></strong> -->
+                    </div>
+                    <div class="icon-links d-flex align-items-center align-content-center">
+                        <button (click)="this.bigMenu = !this.bigMenu" mat-icon-button class=" border-color ">
+                            <mat-icon>more_vert</mat-icon>
+                    </button>
+                    </div>
+                </div>
+
+            </mat-toolbar>
+
+            <mat-nav-list>
+
+                <mat-list>
+                    <a mat-list-item routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>home</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Home</span>
+                    </a>
+
+                    <mat-accordion mat-list-item>
+                        <!-- [hideToggle]="!bigMenu" -->
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header [ngClass]="{'panel-padding': bigMenu}">
+                                <mat-panel-title>
+                                    <a matTooltip="Edit pages" matTooltipClass="bg-dark" mat-list-item>
+                                        <mat-icon mat-list-icon> camera_alt</mat-icon>
+                                        <span *ngIf="bigMenu" mat-line>Media</span>
+                                    </a>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+
+                            <a (click)="closeMen(drawer)" matTooltip="Edit All Pages" matTooltipClass="bg-dark" mat-list-item routerLink="gallery" routerLinkActive="active">
+                                <mat-icon mat-list-icon>collections</mat-icon>
+                                <span *ngIf="bigMenu" mat-line>Gallery</span>
+                            </a>
+
+                            <a (click)="closeMen(drawer)" matTooltip="Edit All Pages" matTooltipClass="bg-dark" mat-list-item routerLink="youtube" routerLinkActive="active">
+                                <mat-icon mat-list-icon>videocam</mat-icon>
+                                <span *ngIf="bigMenu" mat-line>YouTube</span>
+                            </a>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+
+                    <a mat-list-item routerLink="add-blog" routerLinkActive="active" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>create</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Add Blog</span>
+                    </a>
+
+                    <a mat-list-item routerLink="all-blogs" routerLinkActive="active" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>remove_red_eye</mat-icon>
+                        <span mat-line *ngIf="bigMenu">All blogs</span>
+                    </a>
+
+                    <a mat-list-item routerLink="users" routerLinkActive="active" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>group</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Users</span>
+                    </a>
+
+
+                    <a mat-list-item routerLink="profile" routerLinkActive="active" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>person</mat-icon>
+                        <span mat-line *ngIf="bigMenu">profile</span>
+                    </a>
+
+
+
+                    <a mat-list-item routerLink="settings" routerLinkActive="active" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>settings</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Settings</span>
+                    </a>
+
+                    <a mat-list-item routerLink="logout" routerLinkActive="active" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>power_settings_new</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Logout</span>
+                    </a>
+
+
+                </mat-list>
+            </mat-nav-list>
+
+
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <mat-toolbar class="bg-white border-bottom">
+            <div class="containr w-100">
+                <!-- *ngIf="isHandset$ | async" -->
+                <div class="d-flex justify-content-between w-100">
+                    <div class="d-flex align-content-center align-items-center">
+                        <button *ngIf="sharedService.activityInfo.showArrowBack" tabindex="-1" type="button" aria-label="GO BACK" class="main-color-blue mr-3 " mat-icon-button (click)="location.back()">
+                        <mat-icon class="text-bolder">arrow_back_ios</mat-icon>
+                        </button>
+                        <button (click)="drawer.toggle()" *ngIf="!sharedService.activityInfo.showArrowBack" tabindex="-1" type="button" aria-label="Toggle sidenav" class=" mr-3 " mat-icon-button>
+                            <mat-icon style="font-weight: border" class="text-bolder">sort</mat-icon>
+                            </button>
+
+
+                        <p class="mb-0 text-bolder d-flex align-content-center align-items-center">
+
+                            {{sharedService.activityInfo.name}}</p>
+                    </div>
+
+                    <div class="d-flex d-flex align-content-center align-items-center">
+                        <button mat-button class="main-btn-blue mr-3">View blog</button>
+                        <button tabindex="-1" type="button" aria-label="Toggle sidenav" class="border-color" mat-icon-button>
+                <mat-icon class="text-bolder">person</mat-icon>
+                </button>
+
+                    </div>
+                </div>
+            </div>
+        </mat-toolbar>
+
+        <div class="containe outlet-con">
+            <!-- Add Content Here -->
+            <div class="" style="overflow: hidden; min-height: 100vh;">
+                <router-outlet></router-outlet>
+            </div>
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- 
+let likesGiven = 0; setInterval(() => { let heart = document.getElementsByClassName('.wpO6b'); let arrow = document.querySelector('.coreSpriteRightPaginationArrow'); heart.click(); arrow.click(); likesGiven++; console.log(`You've liked ${likesGiven} post(s)!`);
+}, 4000); -->
