@@ -1,11 +1,10 @@
-<div class="">
+<div class="containe">
     <div class="row  boxes">
         <div class=" col-lg-12">
             <div class="table-con  mt-0 bg-white">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>No.</th>
                             <th>Photo</th>
                             <th>Title</th>
                             <th>Desc.</th>
@@ -15,11 +14,40 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
                             <td>
+                                <span class="mr-2 d-inline-block">1</span>
                                 <img width="40px" src="../../../../assets/img/Aggital-2018-in-Review-13.jpg">
                             </td>
-                            <td>Saint Sample</td>
+                            <td><a class="text-muted" href="#">Sample Lorem ipsum dolor sit, amet consectetur,  possimus.</a></td>
+                            <td>saint@gmail.com</td>
+                            <td>Apr 23, 2020</td>
+                            <td class=" d-flex justify-content-end align-content-center align-items-center ">
+                                <button [matMenuTriggerFor]="formMenu" title="Edit account" mat-icon-button>
+                                <mat-icon class="text-muted">more_vert</mat-icon>
+                            </button>
+                                <mat-menu #formMenu="matMenu">
+                                    <button mat-menu-item>
+                              <mat-icon>create</mat-icon>
+                              <span>Edit</span>
+                            </button>
+                                    <button mat-menu-item>
+                              <mat-icon>v</mat-icon>
+                              <span>Check voice mail</span>
+                            </button>
+                                    <button mat-menu-item>
+                              <mat-icon>notifications_off</mat-icon>
+                              <span>Disable alerts</span>
+                            </button>
+                                </mat-menu>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <span class="mr-2 d-inline-block">2</span>
+                                <img width="40px" src="../../../../assets/img/Aggital-2018-in-Review-13.jpg">
+                            </td>
+                            <td><a class="text-muted" href="#">Sample Lorem ipsum dolor sit, amet consectetur,  possimus.</a></td>
                             <td>saint@gmail.com</td>
                             <td>Apr 23, 2020</td>
                             <td class=" d-flex justify-content-end align-content-center align-items-center ">
@@ -43,39 +71,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>1</td>
+
                             <td>
+                                <span class="mr-2 d-inline-block">3</span>
                                 <img width="40px" src="../../../../assets/img/Aggital-2018-in-Review-13.jpg">
                             </td>
-                            <td>Saint Sample</td>
-                            <td>saint@gmail.com</td>
-                            <td>Apr 23, 2020</td>
-                            <td class=" d-flex justify-content-end align-content-center align-items-center ">
-                                <button [matMenuTriggerFor]="formMenu" title="Edit account" mat-icon-button>
-                                <mat-icon class="text-muted">more_vert</mat-icon>
-                            </button>
-                                <mat-menu #formMenu="matMenu">
-                                    <button mat-menu-item>
-                              <mat-icon>dialpad</mat-icon>
-                              <span>Redial</span>
-                            </button>
-                                    <button mat-menu-item disabled>
-                              <mat-icon>voicemail</mat-icon>
-                              <span>Check voice mail</span>
-                            </button>
-                                    <button mat-menu-item>
-                              <mat-icon>notifications_off</mat-icon>
-                              <span>Disable alerts</span>
-                            </button>
-                                </mat-menu>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <img width="40px" src="../../../../assets/img/Aggital-2018-in-Review-13.jpg">
-                            </td>
-                            <td>Saint Sample</td>
+                            <td><a class="text-muted" href="#">Sample Lorem ipsum dolor sit, amet consectetur,  possimus.</a></td>
                             <td>saint@gmail.com</td>
                             <td>Apr 23, 2020</td>
                             <td class=" d-flex justify-content-end align-content-center align-items-center ">

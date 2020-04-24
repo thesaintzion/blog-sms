@@ -1,107 +1,72 @@
-<div class="">
-    <div class="row  boxes">
-        <div class=" col-lg-12">
-            <div class="table-con  mt-0 bg-white">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Photo</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Created</th>
-                            <th class=" d-flex justify-content-end align-content-center align-items-center ">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img width="40px" src="../../../../assets/img/Aggital-2018-in-Review-13.jpg">
-                            </td>
-                            <td>Saint Sample</td>
-                            <td>saint@gmail.com</td>
-                            <td>Apr 23, 2020</td>
-                            <td class=" d-flex justify-content-end align-content-center align-items-center ">
-                                <button [matMenuTriggerFor]="formMenu" title="Edit account" mat-icon-button>
-                                <mat-icon class="text-muted">more_vert</mat-icon>
-                            </button>
-                                <mat-menu #formMenu="matMenu">
-                                    <button mat-menu-item>
-                              <mat-icon>dialpad</mat-icon>
-                              <span>Redial</span>
-                            </button>
-                                    <button mat-menu-item disabled>
-                              <mat-icon>voicemail</mat-icon>
-                              <span>Check voice mail</span>
-                            </button>
-                                    <button mat-menu-item>
-                              <mat-icon>notifications_off</mat-icon>
-                              <span>Disable alerts</span>
-                            </button>
-                                </mat-menu>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img width="40px" src="../../../../assets/img/Aggital-2018-in-Review-13.jpg">
-                            </td>
-                            <td>Saint Sample</td>
-                            <td>saint@gmail.com</td>
-                            <td>Apr 23, 2020</td>
-                            <td class=" d-flex justify-content-end align-content-center align-items-center ">
-                                <button [matMenuTriggerFor]="formMenu" title="Edit account" mat-icon-button>
-                                <mat-icon class="text-muted">more_vert</mat-icon>
-                            </button>
-                                <mat-menu #formMenu="matMenu">
-                                    <button mat-menu-item>
-                              <mat-icon>dialpad</mat-icon>
-                              <span>Redial</span>
-                            </button>
-                                    <button mat-menu-item disabled>
-                              <mat-icon>voicemail</mat-icon>
-                              <span>Check voice mail</span>
-                            </button>
-                                    <button mat-menu-item>
-                              <mat-icon>notifications_off</mat-icon>
-                              <span>Disable alerts</span>
-                            </button>
-                                </mat-menu>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img width="40px" src="../../../../assets/img/Aggital-2018-in-Review-13.jpg">
-                            </td>
-                            <td>Saint Sample</td>
-                            <td>saint@gmail.com</td>
-                            <td>Apr 23, 2020</td>
-                            <td class=" d-flex justify-content-end align-content-center align-items-center ">
-                                <button [matMenuTriggerFor]="formMenu" title="Edit account" mat-icon-button>
-                                <mat-icon class="text-muted">more_vert</mat-icon>
-                            </button>
-                                <mat-menu #formMenu="matMenu">
-                                    <button mat-menu-item>
-                              <mat-icon>dialpad</mat-icon>
-                              <span>Redial</span>
-                            </button>
-                                    <button mat-menu-item disabled>
-                              <mat-icon>voicemail</mat-icon>
-                              <span>Check voice mail</span>
-                            </button>
-                                    <button mat-menu-item>
-                              <mat-icon>notifications_off</mat-icon>
-                              <span>Disable alerts</span>
-                            </button>
-                                </mat-menu>
-                            </td>
-                        </tr>
+<!--  -->
+<div class="container">
+    <div *ngIf="users.length < 1 else showUsers" class="text-center">
+        <p class="mt-5 mb-5 d-flex justify-content-center align-content-center align-items-center w-100">
+            <mat-icon class="text-warning">warning</mat-icon> No users to display.
+        </p>
+        <button mat-raised-button class="main-color-blue btn-rounded"><mat-icon>refresh</mat-icon> Refresh </button>
+        <button mat-raised-button class="main-btn-blue ml-md-4"> Add new user </button>
+    </div>
+    <ng-template #showUsers>
+        <div class="row  boxes">
+            <div class=" col-lg-12">
+                <div class="d-flex justify-content-between align-items-center align-content-center mt-3 px-2">
+                    <mat-checkbox class="example-margin"></mat-checkbox>
+                    <button class="btn btn-sm btn-outline-primary">See more</button>
+                </div>
+                <div class="table-con table-responsive table-fixed  mt-0 bg-white">
+                    <table class="table ">
+                        <thead class="table-header">
+                            <tr>
+                                <th>Select</th>
+                                <th>Photo</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Created</th>
+                                <th class=" d-flex justify-content-end align-content-center align-items-center ">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let user of users">
+                                <tr>
+                                    <td>
+                                        <mat-checkbox></mat-checkbox>
+                                    </td>
 
-                    </tbody>
-                </table>
+                                    <td>
+                                        <img class="border-radius-50" src="../../../../assets/img/Aggital-2018-in-Review-13.jpg">
+                                    </td>
+                                    <td>Saint Sample</td>
+                                    <td>saint@gmail.com</td>
+                                    <td>Apr 23, 2020</td>
+                                    <td class=" d-flex justify-content-end align-content-center align-items-center ">
+                                        <button [matMenuTriggerFor]="formMenu" title="Edit account" mat-icon-button>
+                                <mat-icon class="text-muted">more_vert</mat-icon>
+                            </button>
+                                        <mat-menu #formMenu="matMenu">
+                                            <button mat-menu-item>
+                              <mat-icon>dialpad</mat-icon>
+                              <span>Redial</span>
+                            </button>
+                                            <button mat-menu-item disabled>
+                              <mat-icon>voicemail</mat-icon>
+                              <span>Check voice mail</span>
+                            </button>
+                                            <button mat-menu-item>
+                              <mat-icon>notifications_off</mat-icon>
+                              <span>Disable alerts</span>
+                            </button>
+                                        </mat-menu>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </div>
+
+
             </div>
 
-
         </div>
-
-    </div>
-
+    </ng-template>
 </div>

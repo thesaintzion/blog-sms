@@ -9,10 +9,857 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./dashboard-users.component.scss']
 })
 export class DashboardUsersComponent implements OnInit {
-
+users = [];
+  indeterminate = false;
+  checked = false;
   constructor(public sharedService: SharedService, private router: Router, private titleService: Title) { 
     this.sharedService.activityInfo.name = 'Users';
     this.sharedService.activityInfo.showArrowBack = true;
+
+    let users = [
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+      {
+        id: '1',
+        name: 'Saint Zion',
+        email: 'saintzion777@gmail.com',
+        createdAt: Date.now(),
+        photo: '...'
+      },
+    ];
+
+    this.users = users;
       }
 
 // Set page title

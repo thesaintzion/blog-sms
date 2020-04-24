@@ -7,8 +7,9 @@
     }
     .sidenav-container {
         height: 100%;
+        // background-color: #ffffff;
         background-color: #ffffff;
-        // background-color: #f5f8fa;
+        // background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgb(255, 255, 255)), url('../../../../assets/img/consult.jpg');
     }
     .sidenav-container.blur {
         filter: blur(2px);
@@ -17,6 +18,9 @@
     .user-pic {
         background-position: center;
         background-size: contain;
+    }
+    .mat-drawer {
+        background-color: transparent !important;
     }
     .sidenav {
         width: 230px;
@@ -35,10 +39,11 @@
             height: 100%;
             overflow: hidden;
             // background-color: #f5f8fa;
-            background-color: #ffffff;
+            background-color: transparent;
             // background-image: linear-gradient(160deg, #00f2fe 0%, rgba(79, 172, 254, 0.9) 100%);
             // min-height: 100%;
             // border: 1px solid #eee;
+            // background: url('../../../../assets/img/consult.jpg') blue;
             img {
                 // margin-top: 10px;
             }
@@ -101,21 +106,6 @@
             background-color: #ffffff !important;
             // background-color: #f5f8fa;
             height: 54px !important;
-        }
-        .footer {
-            position: sticky;
-            bottom: 0;
-            z-index: 1;
-            width: 100%;
-            overflow: hidden;
-            .mat-toolbar {
-                background-color: #ffffff !important;
-            }
-            .mat-icon {
-                height: 30px;
-                width: 30px;
-                font-size: 30px;
-            }
         }
     }
     .user-pic-con.mat-list-icon {

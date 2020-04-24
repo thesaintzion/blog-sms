@@ -1,32 +1,53 @@
-.table {
-    .account-no {
-        &:hover {
-            cursor: pointer;
-            background-color: gray;
-            color: #ffffff;
+:host ::ng-deep {
+    .table {
+        img {
+            height: 35px;
+            width: 35px;
+        }
+        thead th {
+            border: 0 !important;
+            font-size: 14px;
+        }
+        tbody {
+            tr {
+                &:hover {
+                    background-color: #eaf7ff;
+                    color: #1c9deb !important;
+                    .mat-icon,
+                    td,
+                    a {
+                        color: #1c9deb !important;
+                        font-weight: bolder;
+                        border-color: transparent !important;
+                    }
+                }
+            }
+        }
+        td {
+            padding: .10rem !important;
+            padding-left: 10px !important;
+            vertical-align: middle !important;
+            border-top: 1px solid #f4f5f6;
+            font-size: 13px !important;
+        }
+        .flesh-tr {
+            tr:first-child {
+                background: rgb(255, 255, 162);
+            }
+        }
+        .checked {
+            background-color: #eaf7ff !important;
         }
     }
-    thead th {
-        border: 0 !important;
-        // font-weight: normal !important;
-        // color: #ccd6dd !important;
-        font-size: 14px;
+    .table-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
     tbody {
-        border-radius: 8px !important;
-    }
-    tr {
-        // border-bottom: 5px solid #eaebf0;
-        // border-top: 5px solid #eaebf0;
-    }
-    td {
-        padding: .10rem !important;
-        padding-left: 10px !important;
-        vertical-align: middle !important;
-    }
-    .flesh-tr {
-        tr:first-child {
-            background: rgb(255, 255, 162);
-        }
+        height: 400px;
+        overflow-y: auto;
+        width: 100%;
+        border-top: 1px solid #f4f5f6;
     }
 }

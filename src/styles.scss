@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 $main-gray: #F5F5F5;
-$main-blue: #1da1f2;
+$main-blue: #1c9deb;
 $main-black: #000000;
 html,
 body {
@@ -24,6 +24,18 @@ textarea,
 table td {
     font-weight: normal !important;
     font-size: 14px;
+}
+
+.shadow-sm-2 {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28) !important;
+}
+
+.border-radius-50 {
+    border-radius: 50% !important;
+}
+
+.border-radius-sm {
+    border-radius: 8px !important;
 }
 
 .selector-for-some-widget {
@@ -78,9 +90,13 @@ table td {
 }
 
 .main-btn-blue {
-    border-radius: 90px !important;
+    border-radius: 96px !important;
     background-color: $main-blue;
     color: #ffffff;
+}
+
+.btn-rounded {
+    border-radius: 96px !important;
 }
 
 .main-btn-blue-outline {

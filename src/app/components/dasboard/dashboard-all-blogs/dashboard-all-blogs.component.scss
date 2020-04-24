@@ -8,21 +8,28 @@
     }
     thead th {
         border: 0 !important;
-        // font-weight: normal !important;
-        // color: #ccd6dd !important;
         font-size: 14px;
     }
     tbody {
-        border-radius: 8px !important;
-    }
-    tr {
-        // border-bottom: 5px solid #eaebf0;
-        // border-top: 5px solid #eaebf0;
+        tr {
+            &:hover {
+                background-color: #eaf7ff;
+                color: #1c9deb !important;
+                .mat-icon,
+                td,
+                a {
+                    color: #1c9deb !important;
+                    font-weight: bolder;
+                    border-color: transparent !important;
+                }
+            }
+        }
     }
     td {
         padding: .10rem !important;
         padding-left: 10px !important;
         vertical-align: middle !important;
+        border-top: 1px solid #f4f5f6;
     }
     .flesh-tr {
         tr:first-child {
