@@ -95,7 +95,7 @@
 
     <mat-sidenav-content>
 
-        <mat-toolbar class=" border-bottom">
+        <mat-toolbar class=" main border-bottom">
             <div class="containr w-100">
                 <!-- *ngIf="isHandset$ | async" -->
                 <div class="d-flex justify-content-between w-100">
@@ -125,11 +125,7 @@
         </mat-toolbar>
 
         <div class="containe outlet-con">
-            <!-- Add Content Here -->
-            <div class="" style="overflow: hidden; min-height: 100vh;">
-                <router-outlet></router-outlet>
-            </div>
-
+            <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

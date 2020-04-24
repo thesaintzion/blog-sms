@@ -1,39 +1,65 @@
-.table {
-    .account-no {
-        &:hover {
-            cursor: pointer;
-            background-color: gray;
-            color: #ffffff;
+:host ::ng-deep {
+    .table {
+        img {
+            height: 35px;
+            width: 35px;
         }
-    }
-    thead th {
-        border: 0 !important;
-        font-size: 14px;
-    }
-    tbody {
-        tr {
-            &:hover {
-                background-color: #eaf7ff;
-                color: #1c9deb !important;
-                .mat-icon,
-                td,
-                a {
+        thead th {
+            border: 0 !important;
+            font-size: 14px;
+            span {
+                font-weight: bolder !important;
+            }
+        }
+        tbody {
+            tr {
+                &:hover {
+                    background-color: #eaf7ff;
                     color: #1c9deb !important;
-                    font-weight: bolder;
-                    border-color: transparent !important;
+                    .mat-icon,
+                    td,
+                    a {
+                        color: #1c9deb !important;
+                        font-weight: bolder;
+                        border-color: transparent !important;
+                    }
                 }
             }
         }
+        td {
+            padding: .10rem !important;
+            padding-left: 10px !important;
+            vertical-align: middle !important;
+            border-top: 1px solid #f4f5f6;
+            font-size: 13px !important;
+        }
+        .flesh-tr {
+            tr:first-child {
+                background: rgb(255, 255, 162);
+            }
+        }
     }
-    td {
-        padding: .10rem !important;
-        padding-left: 10px !important;
-        vertical-align: middle !important;
+    .table-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    tbody {
+        height: 400px;
+        overflow-y: auto;
+        width: 100%;
         border-top: 1px solid #f4f5f6;
     }
-    .flesh-tr {
-        tr:first-child {
-            background: rgb(255, 255, 162);
-        }
+    .main-con {}
+    .table-main-header {
+        position: sticky !important;
+        top: 54px !important;
+        z-index: 100;
+        height: 47px !important;
+        background-color: #ffffff;
+        // display: none;
+    }
+    .checked {
+        background-color: #eaf7ff !important;
     }
 }

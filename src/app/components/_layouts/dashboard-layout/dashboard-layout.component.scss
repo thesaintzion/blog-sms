@@ -7,7 +7,6 @@
     }
     .sidenav-container {
         height: 100%;
-        // background-color: #ffffff;
         background-color: #ffffff;
         // background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgb(255, 255, 255)), url('../../../../assets/img/consult.jpg');
     }
@@ -97,9 +96,9 @@
         background-repeat: no-repeat;
     }
     .mat-sidenav-content {
-        .mat-toolbar {
-            // border-radius: 60px;
-            // margin-top: 10px;
+        // height: 100% !important;
+        // overflow: hidden;
+        .mat-toolbar.main {
             position: sticky;
             top: 0;
             z-index: 100;
@@ -130,9 +129,6 @@
         .hide-mobile {
             display: none !important;
         }
-        .outlet-con.container {
-            padding: 0 !important;
-        }
         .mat-sidenav-content {
             .mat-toolbar {
                 .container {
@@ -141,4 +137,10 @@
             }
         }
     }
+    // .outlet-con {
+    //     height: 100% !important;
+    //     padding-bottom: 80px;
+    //     overflow: hidden;
+    //     overflow-y: auto;
+    // }
 }

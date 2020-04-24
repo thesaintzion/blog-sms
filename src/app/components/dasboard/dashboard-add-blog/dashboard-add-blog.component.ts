@@ -130,8 +130,7 @@ imgUrl = '';
 
 
     // Open test dialog
-    openConfirmDialog() {
-         
+    openConfirmDialog() {  
       let message = 'Are you sure you want to delete this?'
       const  dialogRef = this.dialog.open(DialogComponent, {  
         //  width: '400px', 
