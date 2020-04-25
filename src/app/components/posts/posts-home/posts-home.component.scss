@@ -1,0 +1,18 @@
+.mat-card {
+    box-shadow: none !important;
+    margin-bottom: 35px;
+    h3 {
+        line-height: 0.7;
+        a {
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            color: #000000;
+            text-transform: uppercase;
+        }
+    }
+    p {
+        font-size: 14px !important;
+        font-weight: normal !important;
+        color: gray;
+    }
+}

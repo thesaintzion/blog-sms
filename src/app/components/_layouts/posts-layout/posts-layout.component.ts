@@ -14,6 +14,8 @@ export class PostsLayoutComponent implements OnInit {
 
   blur = true;
   bigMenu = true;
+  categoryClass;
+  showCategory = false;
   
     isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -42,6 +44,26 @@ export class PostsLayoutComponent implements OnInit {
             return null;
           }
         });
+  }
+
+  isMobile(){
+    this.breakpointObserver
+        .observe(['(max-width: 767px)'])
+        .subscribe((state: BreakpointState) => {
+          if (state.matches) {
+            return  true;
+          } else {
+            return false;
+          }
+        });
+  }
+
+  toggleCategory(animate){
+    if(animate == 'fadeInUp'){
+      this.categoryClass = 'fadeInUp';
+    }else if(animate == 'fadeOut'){
+      this.categoryClass = 'fadeOut';
+    }
   }
   // Quill conf
     quillConfig: any = {

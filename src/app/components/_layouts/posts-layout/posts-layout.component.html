@@ -13,7 +13,7 @@
     </footer>
 </div> -->
 
-<mat-sidenav-container class="sidenav-container dashboard-blue" [ngClass]="{'blur': blur}">
+<mat-sidenav-container class="sidenav-container dashboard-blue">
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'dialog'" mode="over" opened="false">
         <div class="sidenav-rounded">
             <mat-toolbar class="animated">
@@ -106,71 +106,131 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <mat-toolbar class="main border-bottom">
-            <div class="container w-100">
-                <!-- *ngIf="isHandset$ | async" -->
-                <div class="d-flex justify-content-between w-100">
-                    <div class="d-flex align-content-center align-items-center">
-                        <button (click)="drawer.toggle()" *ngIf="!sharedService.activityInfo.showArrowBack" tabindex="-1" type="button" aria-label="Toggle sidenav" class=" mr-3 " mat-icon-button>
-                            <mat-icon style="font-weight: border" class="text-bolder">sort</mat-icon>
-                        </button>
-                        <p class="mb-0 text-bolder d-flex align-content-center align-items-center">
+        <header>
+            <mat-toolbar class="main border-bottom">
+                <div class="container w-100">
+                    <div class="d-flex justify-content-between w-100">
+                        <div class="d-flex align-content-center align-items-center">
 
+                            <button (click)="drawer.toggle()" tabindex="-1" type="button" aria-label="Toggle sidenav" class="hide-desktop mr-3 " mat-icon-button>
+                                <mat-icon  style="font-weight: border" class="text-bolder">sort</mat-icon>
+                            </button>
+                            <p class="mb-0 text-bolder d-flex align-content-center align-items-center">
+                                Just A Thought
+                            </p>
+                        </div>
+
+                        <div class="d-flex d-flex align-content-center align-items-center search-form ">
+                            <input class="form-control" placeholder="Searcg blog..">
+                        </div>
+
+                        <div class="d-flex d-flex align-content-center align-items-center">
+                            <button tabindex="-1" type="button" class="icon-hover-style ml-3" mat-icon-button>
+                                    <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
+                            </button>
+                            <button tabindex="-1" type="button" class="icon-hover-style ml-3 " mat-icon-button>
+                                <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
+                        </button>
+                            <button tabindex="-1" type="button" class="icon-hover-style ml-3" mat-icon-button>
+                            <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
+                    </button>
+                            <button tabindex="-1" type="button" class="icon-hover-style" mat-icon-button>
+                        <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
+                        </button>
+
+                            <button (click)="showCategory = !showCategory" type="button" aria-label="Toggle sidenav" class=" ml-3 " mat-icon-button>
+                            <mat-icon *ngIf="!showCategory"  style="font-weight: border" class="text-bolder">menu</mat-icon>
+                            <mat-icon *ngIf="showCategory" style="font-weight: border" class="text-bolder">close</mat-icon>
+                        </button>
+
+                        </div>
+                    </div>
+                </div>
+            </mat-toolbar>
+            <!-- ./ -->
+            <div class="nav-scroller-con animated" *ngIf="showCategory" [ngClass]="{showCategory: 'fadeInUp'}">
+                <div class="nav-scroller py-1 mb-2 shadow-sm bg-fa">
+                    <div class="container-fluid">
+                        <nav class="nav d-flex justify-content-between">
+                            <a class="p-2 main-color-blue text-bold" href="#">World</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">U.S.</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Technology</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Design</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Culture</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Business</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Politics</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Opinion</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Science</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Health</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Style</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Travel</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Health</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Style</a>
+                            <a class="p-2 main-color-blue text-bold" href="#">Travel</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+        <div class="container outlet-con ">
+            <div class="row">
+                <div class="col-md-8">
+                    <main class="border-danger">
+                        <router-outlet></router-outlet>
+                    </main>
+                </div>
+                <div class="col-md-4 sidebar-con">
+                    <aside class="border-danger">
+                        <div class=" ">
+                            <mat-list>
+                                <mat-list-item>
+                                    <mat-icon mat-list-icon class="bg-light border">person</mat-icon>
+                                    <div mat-line>Siant Zion E.</div>
+                                    <div mat-line> Jan 1, 2020 </div>
+                                </mat-list-item>
+                            </mat-list>
+                            <mat-card class="border">
+                                <mat-card-content>
+                                    <h3><a href="#">he Shiba Inu is the smallest of the six original and distinct spitz breeds of dog </a></h3>
+                                    <p>
+                                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan..
+                                    </p>
+                                </mat-card-content>
+                                <mat-card-actions class="text-center">
+                                    <button class="btn btn-sm btn-outline-dark">Read more</button>
+                                </mat-card-actions>
+                            </mat-card>
+
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+        <footer class="py-3 bg-light mt-5">
+            <div class="container">
+                <div class="d-flex justify-content-between w-100">
+                    <div>
+                        <p class="mb-0 text-bolder-black">
                             Just A Thought
                         </p>
                     </div>
-
-                    <div class="d-flex d-flex align-content-center align-items-center search-form ">
-                        <input class="form-control" placeholder="Searcg blog..">
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0 ml-3">Home</p>
+                        <p class="mb-0 ml-3">Home</p>
+                        <p class="mb-0 ml-3">Home</p>
+                        <p class="mb-0 ml-3">Home</p>
+                        <p class="mb-0 ml-3">Home</p>
                     </div>
 
-                    <div class="d-flex d-flex align-content-center align-items-center">
-                        <button tabindex="-1" type="button" class="icon-hover-style ml-3" mat-icon-button>
-                                <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
-                        </button>
-                        <button tabindex="-1" type="button" class="icon-hover-style ml-3 " mat-icon-button>
-                            <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
-                    </button>
-                        <button tabindex="-1" type="button" class="icon-hover-style ml-3" mat-icon-button>
-                        <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
-                </button>
-                        <button tabindex="-1" type="button" class="icon-hover-style" mat-icon-button>
-                    <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
-                    </button>
-                    </div>
                 </div>
             </div>
-        </mat-toolbar>
-        <div class="nav-scroller-con">
-            <div class="nav-scroller py-1 mb-2 shadow-sm">
-                <div class="container-fluid">
-                    <nav class="nav d-flex justify-content-between">
-                        <a class="p-2 main-color-blue text-bold" href="#">World</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">U.S.</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Technology</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Design</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Culture</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Business</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Politics</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Opinion</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Science</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Health</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Style</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Travel</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Health</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Style</a>
-                        <a class="p-2 main-color-blue text-bold" href="#">Travel</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="containe outlet-con ">
-
-
-            <router-outlet></router-outlet>
-        </div>
+        </footer>
     </mat-sidenav-content>
 </mat-sidenav-container>
 

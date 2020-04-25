@@ -1,43 +1,57 @@
-<div class=" container animated fadeInUp">
-    <div class="row">
-        <div class="col-md-8">
-            <main class="border-danger">
-                <div class="p-3 border-radius-8 border">
-                    <p>Lo the only mathe thetyy</p>
+<div class="animated fadeInUp">
+    <ng-container *ngFor="let blog of blogs; let index = index">
+        <mat-card class="border">
+            <img mat-card-image *ngIf="blog.photo != ''" [src]="blog.photo" alt="Photo of a Shiba Inu">
+
+            <mat-card-actions class="has-image" *ngIf="blog.photo != ''">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button (click)="handleLike(index)" mat-icon-button class="icon-hover-style">
+                            <mat-icon *ngIf="index != liked" class="text-bolder-black">favorite_border</mat-icon>
+                            <mat-icon *ngIf="index == liked" color="warn" class="text-bolder">favorite</mat-icon>
+                        </button>
+                        <button mat-icon-button class="icon-hover-style ml-3"><mat-icon class="text-bolder-black ">mail_outline</mat-icon></button>
+                    </div>
+                    <div>
+                        <button mat-icon-button class="icon-hover-style"><mat-icon class="text-bolder-black">share</mat-icon></button>
+                        <button (click)="handleLike(index)" mat-icon-button class="icon-hover-style ml-3">
+                            <mat-icon *ngIf="index != liked" class="text-bolder-black">bookmark_border</mat-icon>
+                            <mat-icon *ngIf="index == liked" color="primary" class="text-bolder">bookmark</mat-icon>
+                        </button>
+                    </div>
                 </div>
-            </main>
-        </div>
-        <div class="col-md-4">
-            <aside class="border-danger">
-                <div class="p-3 border-radius-8 border">
-                    <p>Lo the only mathe thetyy</p>
+            </mat-card-actions>
+
+            <mat-card-content>
+                <h3>
+                    <a href="#">
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    </a>
+                </h3>
+                <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                </p>
+            </mat-card-content>
+
+            <mat-card-actions class="no-image" *ngIf="blog.photo == ''">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button (click)="handleLike(index)" mat-icon-button class="icon-hover-style">
+                            <mat-icon *ngIf="index != liked" class="text-bolder-black">favorite_border</mat-icon>
+                            <mat-icon *ngIf="index == liked" color="warn" class="text-bolder">favorite</mat-icon>
+                        </button>
+                        <button mat-icon-button class="icon-hover-style ml-3"><mat-icon class="text-bolder-black ">mail_outline</mat-icon></button>
+                    </div>
+                    <div>
+                        <button mat-icon-button class="icon-hover-style"><mat-icon class="text-bolder-black">share</mat-icon></button>
+                        <button (click)="handleLike(index)" mat-icon-button class="icon-hover-style ml-3">
+                            <mat-icon *ngIf="index != liked" class="text-bolder-black">bookmark_border</mat-icon>
+                            <mat-icon *ngIf="index == liked" color="primary" class="text-bolder">bookmark</mat-icon>
+                        </button>
+                    </div>
                 </div>
-            </aside>
-        </div>
-    </div>
+            </mat-card-actions>
+        </mat-card>
+    </ng-container>
+
 </div>
-<!-- <div class="row">
-    <div class="col-md-2 mx-auto">
-        <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, libero! Quo repudiandae, fugiat magnam, aliquam pariatur ducimus eius sequi, facilis adipisci rem in ex veniam? Dolorum ipsum cupiditate quo quas?
-        </h1>
-        <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, libero! Quo repudiandae, fugiat magnam, aliquam pariatur ducimus eius sequi, facilis adipisci rem in ex veniam? Dolorum ipsum cupiditate quo quas?
-        </h1>
-        <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, libero! Quo repudiandae, fugiat magnam, aliquam pariatur ducimus eius sequi, facilis adipisci rem in ex veniam? Dolorum ipsum cupiditate quo quas?
-        </h1>
-        <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, libero! Quo repudiandae, fugiat magnam, aliquam pariatur ducimus eius sequi, facilis adipisci rem in ex veniam? Dolorum ipsum cupiditate quo quas?
-        </h1>
-        <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, libero! Quo repudiandae, fugiat magnam, aliquam pariatur ducimus eius sequi, facilis adipisci rem in ex veniam? Dolorum ipsum cupiditate quo quas?
-        </h1>
-        <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, libero! Quo repudiandae, fugiat magnam, aliquam pariatur ducimus eius sequi, facilis adipisci rem in ex veniam? Dolorum ipsum cupiditate quo quas?
-        </h1>
-        <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, libero! Quo repudiandae, fugiat magnam, aliquam pariatur ducimus eius sequi, facilis adipisci rem in ex veniam? Dolorum ipsum cupiditate quo quas?
-        </h1>
-    </div>
-</div> -->
