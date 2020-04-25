@@ -1,0 +1,218 @@
+:host ::ng-deep {
+    $main-gray: #ccd6dd;
+    $main-blue: #1da1f2;
+    $main-black: #000000;
+    .main-color-blue {
+        color: $main-blue !important;
+    }
+    .sidenav-container {
+        height: 100%;
+        background-color: #ffffff;
+        // // background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgb(255, 255, 255)), url('../../../../assets/img/mountain-1.jpg');
+        // background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.965)), url('../../../../assets/img/mountain-1.jpg');
+        // background-size: cover;
+        // background-position: center;
+        // background-repeat: no-repeat;
+    }
+    .sidenav-container.blur {
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+    }
+    .user-pic {
+        background-position: center;
+        background-size: contain;
+    }
+    .mat-drawer {
+        background-color: transparent !important;
+    }
+    .sidenav {
+        width: 230px;
+        border: 0;
+        min-height: 100vh;
+        .sidenav-rounded {
+            height: 100%;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .mat-toolbar {
+            background: transparent;
+            height: 54px !important;
+        }
+        .mat-nav-list {
+            .mat-list-item {
+                font-size: 14px;
+                span.mat-line {
+                    font-weight: 600 !important;
+                }
+            }
+            .mat-expansion-panel {
+                background: transparent !important;
+                color: inherit !important;
+                box-shadow: none !important;
+            }
+            .mat-expansion-panel-header {
+                padding: 0 !important;
+            }
+            .mat-expansion-panel-header.panel-padding {
+                padding: 0 24px 0 0 !important;
+            }
+            .mat-expansion-panel-body {
+                padding: 0 !important;
+            }
+        }
+    }
+    // Containt
+    .mat-sidenav-content {
+        background-color: #fafafa !important;
+        overflow-x: hidden !important;
+        .mat-toolbar.main {
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: 54px !important;
+            p {
+                font-size: 18px;
+                text-transform: capitalize;
+            }
+        }
+    }
+    // 
+    .search-form {
+        .form-control {
+            border-radius: 60px;
+            font-size: 13px !important;
+            line-height: 1.0;
+            background-color: #fafafa;
+            border: 0 !important;
+        }
+    }
+    .mat-list-base .mat-list-item .mat-line {
+        text-overflow: ellipsis !important;
+        span:last-of-type {
+            overflow: hidden;
+            text-overflow: ellipsis !important;
+        }
+    }
+    @media (max-width:767px) {}
+    @media (max-width: 991.93px) {
+        .hide-mobile {
+            display: none !important;
+        }
+        .mat-sidenav-content {
+            .mat-toolbar {
+                .container {
+                    padding: 0 !important;
+                }
+            }
+        }
+    }
+    // 
+    .nav-scroller-con {
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        max-width: 100% !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        background-color: #fff;
+    }
+    .nav-scroller .nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    .nav-scroller .nav-link {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        font-size: .875rem;
+    }
+    // ====== Themes   ========//
+    .dashboard-light {
+        .sidenav {
+            .sidenav-rounded {
+                background-color: #ffffff;
+                background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.877)), url('../../../../assets/img/m2.jpg');
+            }
+            .mat-toolbar {
+                border-bottom: 1px solid #eee;
+                .mat-icon-button {
+                    border: 1px solid rgb(29, 161, 242) !important;
+                    color: rgba(29, 161, 242, 1.00) !important;
+                    font-weight: bolder;
+                    &:hover {
+                        border-color: transparent !important;
+                        background-color: #eaf7ff;
+                        color: rgba(29, 161, 242, 1.00) !important;
+                    }
+                }
+            }
+            .mat-nav-list {
+                .mat-list-item {
+                    &:hover {
+                        border-color: transparent !important;
+                        background-color: #eee;
+                        color: #09a1ff !important;
+                        .mat-icon {
+                            color: #09a1ff !important;
+                        }
+                    }
+                }
+                .mat-icon {
+                    color: #ccd6dd !important;
+                    font-weight: normal !important;
+                }
+            }
+        }
+    }
+    .dashboard-blue {
+        .sidenav {
+            .sidenav-rounded {
+                background-color: #1da1f2;
+                background-image: linear-gradient(to bottom, #1da1f2, #1da0f2de), url('../../../../assets/img/m2.jpg');
+            }
+            .mat-toolbar {
+                border-bottom: 1px solid #fff;
+                .mat-icon-button {
+                    border: 1px solid #fff !important;
+                    color: #fff!important;
+                    font-weight: bolder;
+                    &:hover {
+                        border-color: transparent !important;
+                        background-color: #eaf7ff;
+                        color: rgba(29, 161, 242, 1.00) !important;
+                    }
+                }
+            }
+            .mat-nav-list {
+                .mat-list-item {
+                    &:hover {
+                        border-color: transparent !important;
+                        background-color: rgba(16, 65, 245, 0.435);
+                        color: #000000 !important;
+                        .mat-icon {
+                            color: #ffffff !important;
+                        }
+                    }
+                }
+                .mat-icon {
+                    color: #333335 !important;
+                    font-weight: normal !important;
+                }
+            }
+        }
+    }
+}

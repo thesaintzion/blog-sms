@@ -70,6 +70,16 @@ table td {
     font-weight: bold !important;
 }
 
+.text-bolder-black {
+    font-weight: bolder !important;
+    color: #000000 !important;
+}
+
+.icon-hover-style:hover {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    transition: 800ms;
+}
+
 // Custom
 .main-color-blue {
     color: $main-blue !important;
@@ -80,19 +90,32 @@ table td {
 }
 
 .border-color {
-    border: 1px solid #eee !important;
-    color: #1da1f2 !important;
+    border: 1px solid rgb(29, 161, 242) !important;
+    color: rgba(29, 161, 242, 1.00) !important;
+    font-weight: bolder;
     &:hover {
         border-color: transparent !important;
         background-color: #eaf7ff;
-        color: #09a1ff !important;
+        color: rgba(29, 161, 242, 1.00) !important;
     }
 }
 
 .main-btn-blue {
     border-radius: 96px !important;
-    background-color: $main-blue;
-    color: #ffffff;
+    background-color: transparent !important;
+    border: 1px solid rgb(29, 161, 242) !important;
+    color: rgba(29, 161, 242, 1.00) !important;
+    line-height: 34px !important;
+    padding: 0 17px !important;
+    // font-size: 18px !important;
+    span {
+        font-weight: bolder !important;
+    }
+    &:hover {
+        border-color: transparent !important;
+        background-color: #eaf7ff;
+        color: rgba(29, 161, 242, 1.00) !important;
+    }
 }
 
 .btn-rounded {
@@ -107,6 +130,10 @@ table td {
 
 .main-gray-bg {
     background-color: #f5f8fa !important;
+}
+
+.bg-fa {
+    background-color: #fafafa;
 }
 
 button:focus {

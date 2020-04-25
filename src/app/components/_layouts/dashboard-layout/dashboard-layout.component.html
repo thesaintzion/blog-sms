@@ -1,17 +1,17 @@
-<mat-sidenav-container class="sidenav-container" [ngClass]="{'blur': blur}">
+<mat-sidenav-container class="sidenav-container dashboard-blue" [ngClass]="{'blur': blur}">
 
     <!-- <mat-sidenav [ngClass]="{'bg': bgLoading}" #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false"> -->
 
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
         <div class="sidenav-rounded">
-            <mat-toolbar class="animated border-bottom ">
+            <mat-toolbar class="animated">
                 <div class="d-flex justify-content-between w-100">
                     <div class="user d-flex align-items-center align-content-center ">
                         <img style="width:38px" src="../../../../assets/img/twitter.png">
                         <!-- <strong class="ml-3 main text-bolder">Khozana<strong class="main-green-color">Blog</strong></strong> -->
                     </div>
                     <div class="icon-links d-flex align-items-center align-content-center">
-                        <button (click)="this.bigMenu = !this.bigMenu" mat-icon-button class=" border-color ">
+                        <button (click)="this.bigMenu = !this.bigMenu" mat-icon-button class="       ">
                             <mat-icon>more_vert</mat-icon>
                     </button>
                     </div>
@@ -110,7 +110,8 @@
 
                         <p class="mb-0 text-bolder d-flex align-content-center align-items-center">
 
-                            {{sharedService.activityInfo.name}}</p>
+                            {{sharedService.activityInfo.name}}
+                        </p>
                     </div>
 
                     <div class="d-flex d-flex align-content-center align-items-center">
