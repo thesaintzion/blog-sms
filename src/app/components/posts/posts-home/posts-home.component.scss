@@ -1,18 +1,40 @@
-.mat-card {
-    box-shadow: none !important;
-    margin-bottom: 35px;
-    h3 {
-        line-height: 0.7;
-        a {
-            font-size: 15px !important;
-            font-weight: 600 !important;
-            color: #000000;
-            text-transform: uppercase;
+:host ::ng-deep {
+    .mat-card {
+        box-shadow: none !important;
+        margin-bottom: 50px;
+        .mat-card-image {
+            margin-bottom: 0;
+        }
+        .mat-card-actions {
+            margin-bottom: 0;
+        }
+        .feed-con {
+            margin-top: 6px;
+            margin-bottom: 10px;
+        }
+        h3 {
+            line-height: 0.7;
+            a {
+                font-size: 15px !important;
+                font-weight: 595 !important;
+                color: #000000;
+                text-transform: uppercase;
+                &:hover {
+                    color: #09a1ff !important;
+                }
+            }
+        }
+        p {
+            font-size: 14px !important;
+            font-weight: 200 !important;
+            color: gray;
         }
     }
-    p {
-        font-size: 14px !important;
-        font-weight: normal !important;
-        color: gray;
+    @media (max-width: 767.93px) {
+        .mat-card {
+            border: none !important;
+            border-radius: 0 !important;
+            margin-bottom: 10px;
+        }
     }
 }

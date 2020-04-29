@@ -8,11 +8,6 @@
     .sidenav-container {
         height: 100%;
         background-color: #ffffff;
-        // // background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgb(255, 255, 255)), url('../../../../assets/img/mountain-1.jpg');
-        // background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.965)), url('../../../../assets/img/mountain-1.jpg');
-        // background-size: cover;
-        // background-position: center;
-        // background-repeat: no-repeat;
     }
     .sidenav-container.blur {
         filter: blur(2px);
@@ -26,9 +21,17 @@
         background-color: transparent !important;
     }
     .sidenav {
-        width: 230px;
+        width: 260px;
         border: 0;
         min-height: 100vh;
+        .mat-expansion-panel-header {
+            &:focus {
+                background-color: #ffffff !important;
+            }
+            &:active {
+                background-color: #ffffff !important;
+            }
+        }
         .sidenav-rounded {
             height: 100%;
             overflow: hidden;
@@ -81,6 +84,13 @@
                 }
             }
         }
+        .header-logo {
+            .mat-icon {
+                &:hover {
+                    cursor: pointer !important;
+                }
+            }
+        }
     }
     // 
     .search-form {
@@ -98,21 +108,6 @@
             overflow: hidden;
             text-overflow: ellipsis !important;
         }
-    }
-    @media (max-width:767px) {}
-    @media (max-width: 991.93px) {
-        .mat-sidenav-content {
-            .mat-toolbar {
-                .container {
-                    padding: 0 !important;
-                }
-            }
-        }
-    }
-    // 
-    .nav-scroller-con {
-        // max-width: 100% !important;
-        // overflow: hidden !important;
     }
     .nav-scroller {
         position: relative;
@@ -150,8 +145,8 @@
             .mat-toolbar {
                 border-bottom: 1px solid #eee;
                 .mat-icon-button {
-                    border: 1px solid rgb(29, 161, 242) !important;
-                    color: rgba(29, 161, 242, 1.00) !important;
+                    // border: 1px solid #000 !important;
+                    color: #000 !important;
                     font-weight: bolder;
                     &:hover {
                         border-color: transparent !important;
@@ -172,7 +167,7 @@
                     }
                 }
                 .mat-icon {
-                    color: #ccd6dd !important;
+                    color: #abb3b9 !important;
                     font-weight: normal !important;
                 }
             }
@@ -215,18 +210,17 @@
             }
         }
     }
-    // Sidebar
-    // .sidebar-con {
-    // }
     aside {
-        position: sticky;
-        top: 94px;
-        z-index: 100;
-        display: block;
-        .mat-card {
+        // position: sticky;
+        // top: 94px;
+        // z-index: 100;
+        // display: block;
+        .mat-card,
+        .card {
             box-shadow: none !important;
             margin-bottom: 20px;
-            h3 {
+            overflow: hidden;
+            mat-list h3 {
                 a {
                     font-size: 14px !important;
                     font-weight: bold !important;
@@ -238,6 +232,30 @@
                 font-weight: normal !important;
                 color: gray;
             }
+        }
+    }
+    // Welcome screen
+    .welcome-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #eee;
+        text-align: center;
+        z-index: 99999;
+        background-position-y: top;
+        img {
+            width: 10%;
+            margin: 0 auto;
+            margin-top: 150px;
+        }
+        p {
+            position: absolute;
+            bottom: 30px;
+            font-size: 18px;
+            font-weight: bolder;
+            width: 100%;
         }
     }
     @media (min-width: 1200px) {
@@ -260,8 +278,39 @@
         }
     }
     @media (max-width: 767.93px) {
-        .hide-mobile-tablet {
+        .hide-mobile {
             display: none !important;
+        }
+        header {
+            .header-logo {
+                width: 100%;
+                p {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .sidenav {
+            width: 300px;
+        }
+        // Welcome screen
+        .welcome-screen {
+            background-color: #fff;
+            // -webkit-animation-name: fadeInUp;
+            // animation-name: fadeInUp;
+            img {
+                width: 30%;
+                margin-top: 160px;
+            }
+            p {
+                bottom: 20px;
+                // font-size: 18px;
+                font-weight: bold;
+            }
         }
     }
 }

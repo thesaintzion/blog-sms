@@ -1,7 +1,28 @@
-<header>
-    <h1> Post Header</h1>
-</header>
-<router-outlet></router-outlet>
-<footer>
-    <h5>Footer</h5>
-</footer>
+<div class="bg-fa post">
+    <header>
+        <mat-toolbar class=" main border-bottom">
+            <div class="container">
+                <div class="d-flex justify-content-between w-100">
+                    <div class="d-flex align-content-center align-items-center">
+                        <button *ngIf="sharedService.activityInfo.showArrowBack" tabindex="-1" type="button" aria-label="GO BACK" class="main-color-blue mr-3 " mat-icon-button (click)="location.back()">
+                <mat-icon class="text-bolder">arrow_back_ios</mat-icon>
+                </button>
+                        <p class="mb-0 text-bolder d-flex align-content-center align-items-center">
+                            {{sharedService.activityInfo.name}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </mat-toolbar>
+    </header>
+
+
+    <div class="outlet-con">
+        <router-outlet></router-outlet>
+    </div>
+
+
+    <footer>
+        <h5>Footer</h5>
+    </footer>
+</div>

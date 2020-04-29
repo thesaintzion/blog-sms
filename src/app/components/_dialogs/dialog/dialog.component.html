@@ -3,7 +3,7 @@
 
     <div *ngIf="prevImgPath" class="preview-con pb-5">
         <div class="preview-overlay" style="box-shadow: 0 !important;">
-            <button class="float-right" mat-icon-button mat-raised-button (click)="prevImgPath = nall">
+            <button class="float-right" mat-icon-button mat-raised-button (click)="prevImgPath = null">
                     <mat-icon>close</mat-icon>
                 </button>
         </div>
@@ -15,7 +15,7 @@
             <h4>Fake image upload</h4>
             <div *ngIf="!imgUrl">
                 <div>
-                    <button class="upload-btn" tabindex="-1" mat-raised-button (click)="uploadImg()"><mat-icon>image</mat-icon> Upload Image</button>
+                    <button class="upload-btn" tabindex="-1" mat-raised-button><mat-icon>image</mat-icon> Upload Image</button>
                 </div>
                 <div>
                     <input id="fileInputField" accept="image/*" type="file" class="custom-file-input d-none">
@@ -23,7 +23,7 @@
             </div>
 
             <div>
-                <button mat-raised-button mat-icon-button tabindex="-1" (click)="onBtnClick()"><mat-icon>close</mat-icon></button>
+                <button mat-raised-button mat-icon-button tabindex="-1"><mat-icon>close</mat-icon></button>
             </div>
         </div>
 
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="text-center mt-3">
-                            <button mat-icon-button mat-raised-button (click)="imgUrl = nall">
+                            <button mat-icon-button mat-raised-button (click)="imgUrl = null">
                                 <mat-icon>close</mat-icon>
                             </button>
                         </div>

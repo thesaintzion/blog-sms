@@ -13,6 +13,7 @@ import { Location } from '@angular/common';
 export class PostsLayoutComponent implements OnInit {
 
   blur = true;
+  welcomeScreen = true;
   bigMenu = true;
   categoryClass;
   showCategory = false;
@@ -35,44 +36,34 @@ export class PostsLayoutComponent implements OnInit {
   
        // close menu in phone size
   closeMen(sidenav){
+    // alert('heryy')
     this.breakpointObserver
         .observe(['(max-width: 767px)'])
         .subscribe((state: BreakpointState) => {
           if (state.matches) {
             return  sidenav.toggle();
           } else {
-            return null;
+            return  sidenav.toggle();
           }
         });
   }
 
-  isMobile(){
-    this.breakpointObserver
-        .observe(['(max-width: 767px)'])
-        .subscribe((state: BreakpointState) => {
-          if (state.matches) {
-            return  true;
-          } else {
-            return false;
-          }
-        });
-  }
+  // closeMen(drawer)
 
-  toggleCategory(animate){
-    if(animate == 'fadeInUp'){
-      this.categoryClass = 'fadeInUp';
-    }else if(animate == 'fadeOut'){
-      this.categoryClass = 'fadeOut';
-    }
-  }
+ 
   // Quill conf
     quillConfig: any = {
       toolbar: false
     }
   
     ngOnInit() {
+      const fadeId = <HTMLInputElement> document.getElementById('fadeId');
       setTimeout( () => {
   this.blur = false;
-      }, 4000)
+  this.welcomeScreen = false; 
+  fadeId.style.display = 'none';
+      }, 6000);
+
+
     }
 }

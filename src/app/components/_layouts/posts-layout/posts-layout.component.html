@@ -13,91 +13,102 @@
     </footer>
 </div> -->
 
-<mat-sidenav-container class="sidenav-container dashboard-blue">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'dialog'" mode="over" opened="false">
+
+<!-- Scroll to top -->
+
+
+<mat-sidenav-container class="sidenav-container dashboard-light posts">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" mode="over" opened="false">
         <div class="sidenav-rounded">
             <mat-toolbar class="animated">
                 <div class="d-flex justify-content-between w-100">
                     <div class="user d-flex align-items-center align-content-center ">
-                        <img style="width:38px" src="../../../../assets/img/twitter.png">
-                        <!-- <strong class="ml-3 main text-bolder">Khozana<strong class="main-green-color">Blog</strong></strong> -->
+                        <!-- <img style="width:38px" src="../../../../assets/img/twitter.png"> -->
+                        <h3 class="mb-0 main text-bolder-black">JUST A THOUGHT
+                        </h3>
                     </div>
                     <div class="icon-links d-flex align-items-center align-content-center">
-                        <button (click)="this.bigMenu = !this.bigMenu" mat-icon-button class="       ">
-                            <mat-icon>more_vert</mat-icon>
+                        <button (click)="drawer.toggle()" tabindex="-1" mat-icon-button>
+                            <mat-icon>close</mat-icon>
                     </button>
                     </div>
                 </div>
 
             </mat-toolbar>
 
-            <mat-nav-list>
 
+            <mat-nav-list>
+                <mat-list class="border-bottom">
+                    <mat-list-item>
+                        <mat-icon mat-list-icon class="bg-dark border">person</mat-icon>
+                        <p mat-line class="text-bolder">Khosi Khoza</p>
+                        <p mat-line>
+                            @Khosi-khoza
+                        </p>
+                    </mat-list-item>
+                </mat-list>
                 <mat-list>
-                    <a mat-list-item routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+
+                    <a mat-list-item routerLink="/posts" routerLinkActive="active" tabindex="-1" [routerLinkActiveOptions]="{exact:
                         true}" (click)="closeMen(drawer)">
                         <mat-icon mat-list-icon>home</mat-icon>
                         <span mat-line *ngIf="bigMenu">Home</span>
                     </a>
+                    <a class="hide-desktop" tabindex="-1" mat-list-item routerLink="/search" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>search</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Search</span>
+                    </a>
 
-                    <mat-accordion mat-list-item>
-                        <!-- [hideToggle]="!bigMenu" -->
-                        <mat-expansion-panel>
-                            <mat-expansion-panel-header [ngClass]="{'panel-padding': bigMenu}">
-                                <mat-panel-title>
-                                    <a matTooltip="Edit pages" matTooltipClass="bg-dark" mat-list-item>
-                                        <mat-icon mat-list-icon> camera_alt</mat-icon>
-                                        <span *ngIf="bigMenu" mat-line>Media</span>
+                    <mat-accordion mat-list-icon tabindex="-1">
+                        <mat-expansion-panel tabindex="-1">
+                            <mat-expansion-panel-header tabindex="-1" [ngClass]="{'panel-padding': bigMenu}">
+                                <mat-panel-title tabindex="-1">
+                                    <a matTooltip="Edit pages" mat-list-item>
+                                        <mat-icon mat-list-icon>sort</mat-icon>
+                                        <span *ngIf="bigMenu" mat-line>Categories</span>
                                     </a>
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
 
-                            <a (click)="closeMen(drawer)" matTooltip="Edit All Pages" matTooltipClass="bg-dark" mat-list-item routerLink="gallery" routerLinkActive="active">
-                                <mat-icon mat-list-icon>collections</mat-icon>
+                            <a tabindex="-1" (click)="closeMen(drawer)" mat-list-item routerLink="gallery" routerLinkActive="active">
+                                <mat-icon mat-list-icon>done_all</mat-icon>
                                 <span *ngIf="bigMenu" mat-line>Gallery</span>
                             </a>
 
-                            <a (click)="closeMen(drawer)" matTooltip="Edit All Pages" matTooltipClass="bg-dark" mat-list-item routerLink="youtube" routerLinkActive="active">
-                                <mat-icon mat-list-icon>videocam</mat-icon>
+                            <a tabindex="-1" (click)="closeMen(drawer)" matTooltipClass="bg-dark" mat-list-item routerLink="youtube" routerLinkActive="active">
+                                <mat-icon mat-list-icon>done_all</mat-icon>
+                                <span *ngIf="bigMenu" mat-line>YouTube</span>
+                            </a>
+                            <a tabindex="-1" (click)="closeMen(drawer)" mat-list-item routerLink="gallery" routerLinkActive="active">
+                                <mat-icon mat-list-icon>done_all</mat-icon>
+                                <span *ngIf="bigMenu" mat-line>Gallery</span>
+                            </a>
+
+                            <a tabindex="-1" (click)="closeMen(drawer)" matTooltip="Edit All Pages" matTooltipClass="bg-dark" mat-list-item routerLink="youtube" routerLinkActive="active">
+                                <mat-icon mat-list-icon>done_all</mat-icon>
                                 <span *ngIf="bigMenu" mat-line>YouTube</span>
                             </a>
                         </mat-expansion-panel>
                     </mat-accordion>
 
-                    <a mat-list-item routerLink="add-blog" routerLinkActive="active" (click)="closeMen(drawer)">
-                        <mat-icon mat-list-icon>create</mat-icon>
-                        <span mat-line *ngIf="bigMenu">Add Blog</span>
+                    <a mat-list-item routerLink="add-blog" routerLinkActive="active" tabindex="-1" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>info</mat-icon>
+                        <span mat-line *ngIf="bigMenu">About</span>
+                    </a>
+                    <a mat-list-item routerLink="all-blogs" routerLinkActive="active" tabindex="-1" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>perm_contact_calendar</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Contact</span>
+                    </a>
+                    <a mat-list-item routerLink="users" routerLinkActive="active" tabindex="-1" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>security</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Privacy Policy</span>
                     </a>
 
-                    <a mat-list-item routerLink="all-blogs" routerLinkActive="active" (click)="closeMen(drawer)">
-                        <mat-icon mat-list-icon>remove_red_eye</mat-icon>
-                        <span mat-line *ngIf="bigMenu">All blogs</span>
+                    <a mat-list-item routerLink="profile" routerLinkActive="active" tabindex="-1" (click)="closeMen(drawer)">
+                        <mat-icon mat-list-icon>code</mat-icon>
+                        <span mat-line *ngIf="bigMenu">Developer</span>
                     </a>
-
-                    <a mat-list-item routerLink="users" routerLinkActive="active" (click)="closeMen(drawer)">
-                        <mat-icon mat-list-icon>group</mat-icon>
-                        <span mat-line *ngIf="bigMenu">Users</span>
-                    </a>
-
-
-                    <a mat-list-item routerLink="profile" routerLinkActive="active" (click)="closeMen(drawer)">
-                        <mat-icon mat-list-icon>person</mat-icon>
-                        <span mat-line *ngIf="bigMenu">profile</span>
-                    </a>
-
-
-
-                    <a mat-list-item routerLink="settings" routerLinkActive="active" (click)="closeMen(drawer)">
-                        <mat-icon mat-list-icon>settings</mat-icon>
-                        <span mat-line *ngIf="bigMenu">Settings</span>
-                    </a>
-
-                    <a mat-list-item routerLink="logout" routerLinkActive="active" (click)="closeMen(drawer)">
-                        <mat-icon mat-list-icon>power_settings_new</mat-icon>
-                        <span mat-line *ngIf="bigMenu">Logout</span>
-                    </a>
-
-
                 </mat-list>
             </mat-nav-list>
 
@@ -110,45 +121,47 @@
             <mat-toolbar class="main border-bottom">
                 <div class="container w-100">
                     <div class="d-flex justify-content-between w-100">
-                        <div class="d-flex align-content-center align-items-center">
 
-                            <button (click)="drawer.toggle()" tabindex="-1" type="button" aria-label="Toggle sidenav" class="hide-desktop mr-3 " mat-icon-button>
-                                <mat-icon  style="font-weight: border" class="text-bolder">sort</mat-icon>
-                            </button>
-                            <p class="mb-0 text-bolder d-flex align-content-center align-items-center">
+                        <div class="d-flex align-content-center align-items-center hide-desktop">
+                            <button (click)="drawer.toggle()" tabindex="-1" type="button" aria-label="Toggle sidenav" class=" mr-3 " mat-icon-button>
+                            <mat-icon  style="font-weight: border" class="text-bolder">menu</mat-icon>
+                        </button>
+                        </div>
+
+                        <div class="d-flex align-content-center align-items-center  header-logo">
+                            <mat-icon (click)="drawer.toggle()" class="text-bolder-black hide-mobile mr-3">menu</mat-icon>
+                            <p class="mb-0 text-bolder">
                                 Just A Thought
                             </p>
                         </div>
 
-                        <div class="d-flex d-flex align-content-center align-items-center search-form ">
+                        <div class="d-flex d-flex align-content-center align-items-center search-form hide-mobile">
                             <input class="form-control" placeholder="Searcg blog..">
                         </div>
 
-                        <div class="d-flex d-flex align-content-center align-items-center">
-                            <button tabindex="-1" type="button" class="icon-hover-style ml-3" mat-icon-button>
-                                    <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
-                            </button>
-                            <button tabindex="-1" type="button" class="icon-hover-style ml-3 " mat-icon-button>
+                        <div class="d-flex d-flex align-content-center align-items-center hide-mobile">
+                            <button tabindex="-1" type="button" class="icon-hover-style " mat-icon-button>
                                 <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
                         </button>
-                            <button tabindex="-1" type="button" class="icon-hover-style ml-3" mat-icon-button>
+                            <button tabindex="-1" type="button" class="icon-hover-style" mat-icon-button>
                             <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
                     </button>
                             <button tabindex="-1" type="button" class="icon-hover-style" mat-icon-button>
                         <mat-icon class="text-bolder-black">fiber_manual_record</mat-icon>
                         </button>
+                            <button tabindex="-1" type="button" class="btn btn-sm btn-dark ml-3">
+                            Login
+                    </button>
+                        </div>
 
-                            <button (click)="showCategory = !showCategory" type="button" aria-label="Toggle sidenav" class=" ml-3 " mat-icon-button>
-                            <mat-icon *ngIf="!showCategory"  style="font-weight: border" class="text-bolder">menu</mat-icon>
-                            <mat-icon *ngIf="showCategory" style="font-weight: border" class="text-bolder">close</mat-icon>
-                        </button>
-
+                        <div class="d-flex d-flex align-content-center align-items-center hide-desktop">
+                            <button mat-icon-button class="icon-hover-style ml-3"><mat-icon class="text-bolder-black ">mail_outline</mat-icon></button>
                         </div>
                     </div>
                 </div>
             </mat-toolbar>
             <!-- ./ -->
-            <div class="nav-scroller-con animated" *ngIf="showCategory" [ngClass]="{showCategory: 'fadeInUp'}">
+            <!-- <div class="nav-scroller-con animated" *ngIf="showCategory" [ngClass]="{showCategory: 'fadeInUp'}">
                 <div class="nav-scroller py-1 mb-2 shadow-sm bg-fa">
                     <div class="container-fluid">
                         <nav class="nav d-flex justify-content-between">
@@ -170,12 +183,8 @@
                         </nav>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </header>
-
-
-
-
 
         <div class="container outlet-con ">
             <div class="row">
@@ -184,29 +193,10 @@
                         <router-outlet></router-outlet>
                     </main>
                 </div>
+
                 <div class="col-md-4 sidebar-con">
                     <aside class="border-danger">
-                        <div class=" ">
-                            <mat-list>
-                                <mat-list-item>
-                                    <mat-icon mat-list-icon class="bg-light border">person</mat-icon>
-                                    <div mat-line>Siant Zion E.</div>
-                                    <div mat-line> Jan 1, 2020 </div>
-                                </mat-list-item>
-                            </mat-list>
-                            <mat-card class="border">
-                                <mat-card-content>
-                                    <h3><a href="#">he Shiba Inu is the smallest of the six original and distinct spitz breeds of dog </a></h3>
-                                    <p>
-                                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan..
-                                    </p>
-                                </mat-card-content>
-                                <mat-card-actions class="text-center">
-                                    <button class="btn btn-sm btn-outline-dark">Read more</button>
-                                </mat-card-actions>
-                            </mat-card>
-
-                        </div>
+                        <app-posts-sidebar></app-posts-sidebar>
                     </aside>
                 </div>
             </div>
@@ -231,6 +221,12 @@
                 </div>
             </div>
         </footer>
+        <!-- Welcome screen -->
+        <div id="fadeId" class="welcome-screen delay-3s animated zoomOutDown duration-3s">
+            <img class=" " src="../../../../assets/img/logo-shadow.svg">
+            <p class="">Just a Thought</p>
+        </div>
+        <app-scroll-up></app-scroll-up>
     </mat-sidenav-content>
 </mat-sidenav-container>
 

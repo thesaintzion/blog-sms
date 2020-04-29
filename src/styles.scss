@@ -6,6 +6,18 @@ $main-black: #000000;
 html,
 body {
     height: 100%;
+    background-color: #eee;
+    background-image: url('./assets/img/logo-shadow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10% !important;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: zoomInUp;
+    animation-name: zoomInUp;
+    // background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.877)), url('../../../../assets/img/m2.jpg');
 }
 
 body {
@@ -47,6 +59,20 @@ table td {
     .mat-list-item-content .mat-icon {
         color: #09a1ff !important;
         // font-weight: bolder !important;
+    }
+}
+
+.posts.dashboard-light {
+    .sidenav {
+        .mat-nav-list {
+            .active {
+                color: #09a1ff !important;
+                span,
+                .mat-icon {
+                    color: #09a1ff !important;
+                }
+            }
+        }
     }
 }
 
@@ -271,5 +297,12 @@ button:focus {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 767px) {
+    html,
+    body {
+        background-size: 30% !important;
     }
 }

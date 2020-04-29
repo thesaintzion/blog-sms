@@ -1,0 +1,62 @@
+:host ::ng-deep {
+    $main-gray: #ccd6dd;
+    $main-blue: #1da1f2;
+    .post {
+        min-height: 100vh;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        margin-bottom: 40px;
+        .mat-toolbar.main {
+            height: 54px !important;
+            background-color: #ffffff !important;
+            p {
+                font-size: 18px;
+                text-transform: capitalize;
+            }
+        }
+    }
+    .outlet-con {
+        min-height: 100%;
+        background-color: #fafafa;
+    }
+    @media (min-width: 1200px) {
+        .container,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl {
+            max-width: 960px;
+        }
+    }
+    @media (min-width: 768px) {
+        .hide-desktop {
+            display: none !important;
+        }
+    }
+    @media (max-width: 991.93px) {
+        .hide-mobile-and-tablet {
+            display: none !important;
+        }
+    }
+    @media (max-width: 767.93px) {
+        .hide-mobile {
+            display: none !important;
+        }
+        header {
+            .header-logo {
+                width: 100%;
+                p {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

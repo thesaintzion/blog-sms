@@ -2,7 +2,7 @@
     <div>
         <div *ngIf="prevImgPath" class="preview-con pb-5">
             <div class="preview-overlay" style="box-shadow: 0 !important;">
-                <button class="float-right" mat-icon-button mat-raised-button (click)="prevImgPath = nall">
+                <button class="float-right" mat-icon-button mat-raised-button (click)="prevImgPath = null">
                         <mat-icon>close</mat-icon>
                     </button>
             </div>
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <div class="text-center mt-3">
-                            <button mat-icon-button mat-raised-button (click)="imgUrl = nall">
+                            <button mat-icon-button mat-raised-button (click)="imgUrl = null">
                                 <mat-icon>close</mat-icon>
                             </button>
                         </div>

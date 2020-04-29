@@ -1,9 +1,11 @@
 <div class="animated fadeInUp">
     <ng-container *ngFor="let blog of blogs; let index = index">
         <mat-card class="border">
-            <img mat-card-image *ngIf="blog.photo != ''" [src]="blog.photo" alt="Photo of a Shiba Inu">
-
+            <a routerLink="/post">
+                <img mat-card-image *ngIf="blog.photo != ''" [src]="blog.photo" alt="Photo of a Shiba Inu">
+            </a>
             <mat-card-actions class="has-image" *ngIf="blog.photo != ''">
+
                 <div class="d-flex justify-content-between">
                     <div>
                         <button (click)="handleLike(index)" mat-icon-button class="icon-hover-style">
@@ -20,11 +22,15 @@
                         </button>
                     </div>
                 </div>
+                <div class="d-flex justify-content-between feed-con b px-2">
+                    <p class="mb-0">like 239k</p>
+                    <p class="mb-0">Comments 597</p>
+                </div>
             </mat-card-actions>
 
             <mat-card-content>
                 <h3>
-                    <a href="#">
+                    <a routerLink="/post">
                         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
                     </a>
                 </h3>
@@ -40,7 +46,7 @@
                             <mat-icon *ngIf="index != liked" class="text-bolder-black">favorite_border</mat-icon>
                             <mat-icon *ngIf="index == liked" color="warn" class="text-bolder">favorite</mat-icon>
                         </button>
-                        <button mat-icon-button class="icon-hover-style ml-3"><mat-icon class="text-bolder-black ">mail_outline</mat-icon></button>
+                        <button routerLink="/post" mat-icon-button class="icon-hover-style ml-3"><mat-icon class="text-bolder-black ">mail_outline</mat-icon></button>
                     </div>
                     <div>
                         <button mat-icon-button class="icon-hover-style"><mat-icon class="text-bolder-black">share</mat-icon></button>
