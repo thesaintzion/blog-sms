@@ -11,3 +11,9 @@
     opacity: 1 !important;
     transition: all .2s ease-in-out;
 }
+
+@media (max-width:767px) {
+    .scroll-to-top {
+        display: none;
+    }
+}

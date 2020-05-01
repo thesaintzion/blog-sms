@@ -26,10 +26,10 @@
         min-height: 100vh;
         .mat-expansion-panel-header {
             &:focus {
-                background-color: #ffffff !important;
+                background-color: transparent !important;
             }
             &:active {
-                background-color: #ffffff !important;
+                background-color: transparent !important;
             }
         }
         .sidenav-rounded {
@@ -156,7 +156,9 @@
                 }
             }
             .mat-nav-list {
+                background-color: transparent !important;
                 .mat-list-item {
+                    background-color: transparent !important;
                     &:hover {
                         border-color: transparent !important;
                         background-color: #eee;
@@ -234,6 +236,18 @@
             }
         }
     }
+    // Main-footer
+    footer.main-footer {}
+    footer.mobile-footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 100;
+        background-color: #ffffff;
+        .m-footer-nav {
+            height: 50px !important;
+            // background-color: #ffffff;
+        }
+    }
     // Welcome screen
     .welcome-screen {
         position: fixed;
@@ -278,24 +292,34 @@
         }
     }
     @media (max-width: 767.93px) {
+        .mat-sidenav-content {
+            background-color: #eee !important;
+        }
         .hide-mobile {
             display: none !important;
         }
-        header {
-            .header-logo {
-                width: 100%;
-                p {
+        .mat-sidenav-content {
+            header {
+                margin-bottom: 0 !important;
+                .mat-toolbar.main {
+                    height: 45px !important;
+                }
+                .header-logo {
                     width: 100%;
-                    text-align: center;
+                    p {
+                        width: 100%;
+                        text-align: center;
+                    }
                 }
             }
         }
-        .container {
+        .container.outlet-con,
+        header .container {
             padding-left: 0;
             padding-right: 0;
         }
         .sidenav {
-            width: 300px;
+            width: 65%;
         }
         // Welcome screen
         .welcome-screen {
@@ -304,7 +328,7 @@
             // animation-name: fadeInUp;
             img {
                 width: 30%;
-                margin-top: 160px;
+                margin-top: 200px;
             }
             p {
                 bottom: 20px;

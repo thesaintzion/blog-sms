@@ -16,6 +16,7 @@ import { DialogComponent } from './components/_dialogs/dialog/dialog.component';
     PageNotFoundComponent,
     LoginComponent,
     DialogComponent,
+    
    
   ],
   imports: [

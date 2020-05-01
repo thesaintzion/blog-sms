@@ -6,6 +6,7 @@ import { PostHomeComponent } from './post-home/post-home.component';
 
 const routes: Routes = [
   {path: '', component: PostLayoutComponent, children:[
+    {path: '', component: PostHomeComponent},
     {path: '', component: PostHomeComponent}
   ]}
 ];
